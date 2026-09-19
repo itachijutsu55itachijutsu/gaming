@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Insider | Play Testnet Games</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Orbitron',sans-serif;}
+body{background:#0b0f1a;color:#fff;overflow-x:hidden;}
+
+.hero{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+justify-content:center;
+padding:80px 20px;
+background:radial-gradient(circle at top,#1a1f38,#0b0f1a);
+}
+
+.hero-left{
+flex:1;
+min-width:300px;
+padding:20px;
+}
+
+.hero-right{
+flex:1;
+min-width:300px;
+text-align:center;
+}
+
+.hero h1{
+font-size:42px;
+font-weight:900;
+margin-bottom:20px;
+color:#00ffe0;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:30px;
+font-weight:700;
+opacity:0.9;
+}
+
+.glow-btn{
+padding:18px 40px;
+background:#00ffe0;
+color:#000;
+border:none;
+border-radius:50px;
+font-weight:900;
+cursor:pointer;
+text-decoration:none;
+display:inline-block;
+animation:glow 1.5s infinite alternate;
+transition:0.3s;
+}
+
+.glow-btn:hover{
+transform:scale(1.05);
+}
+
+@keyframes glow{
+from{box-shadow:0 0 10px #00ffe0;}
+to{box-shadow:0 0 25px #00ffe0;}
+}
+
+.timer{
+margin-top:20px;
+font-size:18px;
+color:#ffcc00;
+}
+
+.section{
+padding:80px 20px;
+text-align:center;
+}
+
+.section h2{
+font-size:32px;
+margin-bottom:40px;
+color:#00ffe0;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
+
+.card{
+background:#141a2e;
+padding:30px;
+border-radius:15px;
+width:280px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.stats{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+margin-top:40px;
+}
+
+.stat h3{
+font-size:36px;
+color:#00ffe0;
+}
+
+.stat p{
+font-weight:700;
+}
+
+.social-proof{
+background:#11152a;
+padding:60px 20px;
+text-align:center;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+font-size:13px;
+opacity:0.6;
+}
+
+img{
+max-width:100%;
+border-radius:15px;
+}
+
+@media(max-width:768px){
+.hero{flex-direction:column;text-align:center;}
+.hero h1{font-size:30px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-left">
+<h1>PLAY TESTNET GAMES. EXPLORE WEB3. STAY AHEAD.</h1>
+<p>Join early blockchain game testnets, complete tasks, compete with players & explore potential reward opportunities.</p>
+<a href="https://lockedpage1.website/cl/i/1xoeve" class="glow-btn">JOIN LIVE TESTNET</a>
+<div class="timer" id="countdown"></div>
+</div>
+
+<div class="hero-right">
+<img src="https://images.unsplash.com/photo-1639762681057-408e52192e55" alt="Web3 Game">
+</div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+<h2>WHY PLAY TESTNET GAMES?</h2>
+<div class="cards">
+<div class="card">
+<h3>EARLY ACCESS</h3>
+<p>Be among the first to try new Web3 games before public release.</p>
+</div>
+<div class="card">
+<h3>ON-CHAIN EXPERIENCE</h3>
+<p>Practice wallet interaction, NFTs & blockchain tools safely.</p>
+</div>
+<div class="card">
+<h3>POTENTIAL REWARD CAMPAIGNS</h3>
+<p>Some projects may reward active early participants.</p>
+</div>
+</div>
+
+<div class="stats">
+<div class="stat">
+<h3 id="users">0</h3>
+<p>Active Explorers</p>
+</div>
+<div class="stat">
+<h3 id="games">0</h3>
+<p>Testnet Games</p>
+</div>
+<div class="stat">
+<h3 id="campaigns">0</h3>
+<p>Live Campaigns</p>
+</div>
+</div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="social-proof">
+<h2>COMMUNITY FEEDBACK</h2>
+<p>"Great place to discover early Web3 games!"</p>
+<p>"Clean interface & easy access to testnets."</p>
+<p>"Helped me learn blockchain interactions."</p>
+<br>
+<a href="https://lockedpage1.website/cl/i/1xoeve" class="glow-btn">ACCESS TESTNET GAMES</a>
+</section>
+
+<div class="footer">
+Crypto Insider | Educational Resource | No Guaranteed Earnings | Not Financial Advice
+</div>
+
+<script>
+// Countdown Timer (Real Future Date)
+const targetDate = new Date("March 30, 2026 00:00:00").getTime();
+const countdown = document.getElementById("countdown");
+
+setInterval(function(){
+let now = new Date().getTime();
+let distance = targetDate - now;
+
+let days = Math.floor(distance / (1000*60*60*24));
+let hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+
+countdown.innerHTML = "Next Campaign Phase Starts In: " + days + "d " + hours + "h " + minutes + "m";
+},1000);
+
+// Counter Animation
+function animateValue(id, start, end, duration) {
+let range = end - start;
+let current = start;
+let increment = end > start ? 1 : -1;
+let stepTime = Math.abs(Math.floor(duration / range));
+let obj = document.getElementById(id);
+let timer = setInterval(function() {
+current += increment;
+obj.innerHTML = current;
+if (current == end) clearInterval(timer);
+}, stepTime);
+}
+
+animateValue("users", 0, 12480, 2000);
+animateValue("games", 0, 36, 2000);
+animateValue("campaigns", 0, 12, 2000);
+</script>
+
+</body>
+</html>
